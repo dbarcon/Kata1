@@ -12,7 +12,9 @@ public class Tests
     public void WhenGameReceivesTheCorrectNumberThePlayerWins()
     {
         var game = new Game();
+        
         var result = game.Guess(5);
+        
         result.Should().Be("Win");
     }
 
@@ -20,7 +22,9 @@ public class Tests
     public void WhenGameReceivesAHigherNumberTheGameReturnsLower()
     {
         var game = new Game();
+        
         var result = game.Guess(6);
+        
         result.Should().Be("Lower");
     }
 }
