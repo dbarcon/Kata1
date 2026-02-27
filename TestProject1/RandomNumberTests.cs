@@ -27,4 +27,14 @@ public class RandomNumberTests
         
         result.Should().Be("Lower");
     }
+
+    [Test]
+    public void WhenGameReceivesALowerNumberTheGameReturnsHigher()
+    {
+        var game = new Game();
+
+        var result = game.Guess(4);
+
+        result.Should().Be("Higher");
+    }
 }
