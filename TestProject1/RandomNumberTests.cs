@@ -5,7 +5,7 @@ using NSubstitute;
 
 namespace TestProject1;
 
-public class Tests
+public class RandomNumberTests
 {
 
     [Test]
