@@ -13,26 +13,33 @@ public class Game
         targetNumber = randomNumberGenerator.Generate();
     }
 
-    public string Guess(int guessedNumber)
+    public GameResult Guess(int guessedNumber)
     {
         attempts++;
         if (attempts == LimitOfAttmepts)
         {
-            return "You lost";
+            return GameResult.Loose;
         }
         if (guessedNumber > targetNumber)
         {
-            return "Lower";
+            return GameResult.Lower;
         }
-
         if (guessedNumber < targetNumber)
         {
-            return "Higher";
+            return GameResult.Higher;
         }
 
-        return "Win";
+        return GameResult.Win;
     }
 }
+public enum GameResult
+{
+    Win,
+    Higher,
+    Lower,
+    Loose
+}
+
 
 public class RandomNumberGenerator
 {

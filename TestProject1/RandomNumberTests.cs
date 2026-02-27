@@ -21,7 +21,7 @@ public class RandomNumberTests
     {
         var result = game.Guess(5);
         
-        result.Should().Be("Win");
+        result.Should().Be(GameResult.Win);
     }
 
     [Test]
@@ -29,7 +29,7 @@ public class RandomNumberTests
     {
         var result = game.Guess(6);
         
-        result.Should().Be("Lower");
+        result.Should().Be(GameResult.Lower);
     }
 
     [Test]
@@ -37,7 +37,7 @@ public class RandomNumberTests
     {
         var result = game.Guess(4);
 
-        result.Should().Be("Higher");
+        result.Should().Be(GameResult.Higher);
     }
     
     [Test]
@@ -47,6 +47,6 @@ public class RandomNumberTests
         game.Guess(4);
         var result = game.Guess(10);
         
-        result.Should().Be("You lost");
+        result.Should().Be(GameResult.Loose);
     }
 }
