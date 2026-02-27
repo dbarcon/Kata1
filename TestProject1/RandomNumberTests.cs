@@ -7,12 +7,18 @@ namespace TestProject1;
 
 public class RandomNumberTests
 {
+    private Game game;
+
+    [SetUp]
+    public void Setup()
+    {
+        var randomNumberGenerator = Substitute.For<RandomNumberGenerator>();
+        game = new Game(randomNumberGenerator);
+    }
 
     [Test]
     public void WhenGameReceivesTheCorrectNumberThePlayerWins()
     {
-        var game = new Game();
-        
         var result = game.Guess(5);
         
         result.Should().Be("Win");
@@ -21,8 +27,6 @@ public class RandomNumberTests
     [Test]
     public void WhenGameReceivesAHigherNumberTheGameReturnsLower()
     {
-        var game = new Game();
-        
         var result = game.Guess(6);
         
         result.Should().Be("Lower");
@@ -31,8 +35,6 @@ public class RandomNumberTests
     [Test]
     public void WhenGameReceivesALowerNumberTheGameReturnsHigher()
     {
-        var game = new Game();
-
         var result = game.Guess(4);
 
         result.Should().Be("Higher");
