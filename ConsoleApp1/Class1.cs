@@ -16,5 +16,10 @@ public class Class1
         Console.WriteLine("Hello again, World!");
         return i;
     }
+
+    public object Guess(int i)
+    {
+        throw new NotImplementedException();
+    }
 }
 
