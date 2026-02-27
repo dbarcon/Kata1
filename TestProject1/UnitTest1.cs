@@ -24,15 +24,3 @@ public class Tests
         result.Should().Be("Lower");
     }
 }
-
-public class Game
-{
-    public string Guess(int i)
-    {
-        if (i > 5)
-        {
-            return "Lower";
-        }
-        return "Win";
-    }
-}
