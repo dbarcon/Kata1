@@ -39,4 +39,14 @@ public class RandomNumberTests
 
         result.Should().Be("Higher");
     }
+    
+    [Test]
+    public void WhenThePlayerGuessesTheWrongNumberThreeTimesTheGameReturnsYouLost()
+    {
+        game.Guess(6);
+        game.Guess(4);
+        var result = game.Guess(10);
+        
+        result.Should().Be("You lost");
+    }
 }
