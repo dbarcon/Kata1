@@ -15,12 +15,24 @@ public class Tests
         var result = game.Guess(5);
         result.Should().Be("Win");
     }
+
+    [Test]
+    public void WhenGameReceivesAHigherNumberTheGameReturnsLower()
+    {
+        var game = new Game();
+        var result = game.Guess(6);
+        result.Should().Be("Lower");
+    }
 }
 
 public class Game
 {
     public string Guess(int i)
     {
+        if (i > 5)
+        {
+            return "Lower";
+        }
         return "Win";
     }
 }
