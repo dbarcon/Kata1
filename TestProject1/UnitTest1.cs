@@ -9,7 +9,7 @@ public class Tests
 {
 
     [Test]
-    public void WhenGameReceivesorrectNumberThePlayerWins()
+    public void WhenGameReceivesTheCorrectNumberThePlayerWins()
     {
         var game = new Game();
         var result = game.Guess(5);
