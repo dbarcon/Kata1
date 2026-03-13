@@ -47,15 +47,18 @@ public class RandomNumberGenerator : IRandomNumberGenerator
 {
     private readonly int _lowerNumber;
     private readonly int _higherNumber;
+    private Random _random;
 
     public RandomNumberGenerator(int lowerNumber, int higherNumber)
     {
         _lowerNumber = lowerNumber;
         _higherNumber = higherNumber;
+        
+        _random = new Random();
     }
-
+    
     public int Generate()
     {
-        return new Random().Next(_lowerNumber, _higherNumber);
+        return _random.Next(_lowerNumber, _higherNumber);
     }
 }
