@@ -45,13 +45,17 @@ public interface IRandomNumberGenerator
 
 public class RandomNumberGenerator : IRandomNumberGenerator
 {
+    private readonly int _lowerNumber;
+    private readonly int _higherNumber;
+
     public RandomNumberGenerator(int lowerNumber, int higherNumber)
     {
-        throw new NotImplementedException();
+        _lowerNumber = lowerNumber;
+        _higherNumber = higherNumber;
     }
 
     public int Generate()
     {
-        return 75;
+        return new Random().Next(_lowerNumber, _higherNumber);
     }
 }
