@@ -45,8 +45,13 @@ public interface IRandomNumberGenerator
 
 public class RandomNumberGenerator : IRandomNumberGenerator
 {
+    public RandomNumberGenerator(int lowerNumber, int higherNumber)
+    {
+        throw new NotImplementedException();
+    }
+
     public int Generate()
     {
-        return 5;
+        return 75;
     }
 }
