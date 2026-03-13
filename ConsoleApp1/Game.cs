@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-
 namespace ConsoleApp1;
 
 public class Game
@@ -8,7 +6,7 @@ public class Game
     private int targetNumber;
     private int attempts = 0;
 
-    public Game(RandomNumberGenerator randomNumberGenerator)
+    public Game(IRandomNumberGenerator randomNumberGenerator)
     {
         targetNumber = randomNumberGenerator.Generate();
     }
@@ -40,8 +38,12 @@ public enum GameResult
     Loose
 }
 
+public interface IRandomNumberGenerator
+{
+    int Generate();
+}
 
-public class RandomNumberGenerator
+public class RandomNumberGenerator : IRandomNumberGenerator
 {
     public int Generate()
     {

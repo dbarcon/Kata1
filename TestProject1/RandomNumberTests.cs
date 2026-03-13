@@ -12,7 +12,8 @@ public class RandomNumberTests
     [SetUp]
     public void Setup()
     {
-        var randomNumberGenerator = Substitute.For<RandomNumberGenerator>();
+        var randomNumberGenerator = Substitute.For<IRandomNumberGenerator>();
+        randomNumberGenerator.Generate().Returns(5);
         game = new Game(randomNumberGenerator);
     }
 
