@@ -45,20 +45,16 @@ public interface IRandomNumberGenerator
 
 public class RandomNumberGenerator : IRandomNumberGenerator
 {
-    private readonly int _lowerNumber;
-    private readonly int _higherNumber;
-    private Random _random;
+    private readonly int _randomNumber;
 
     public RandomNumberGenerator(int lowerNumber, int higherNumber)
     {
-        _lowerNumber = lowerNumber;
-        _higherNumber = higherNumber;
-        
-        _random = new Random();
+        var _random = new Random();
+        _randomNumber = _random.Next(lowerNumber, higherNumber);
     }
     
     public int Generate()
     {
-        return _random.Next(_lowerNumber, _higherNumber);
+        return _randomNumber;
     }
 }
