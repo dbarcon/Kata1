@@ -49,8 +49,7 @@ public class RandomNumberGenerator : IRandomNumberGenerator
 
     public RandomNumberGenerator(int lowerNumber, int higherNumber)
     {
-        var _random = new Random();
-        _randomNumber = _random.Next(lowerNumber, higherNumber);
+        _randomNumber = new Random().Next(lowerNumber, higherNumber);
     }
     
     public int Generate()
